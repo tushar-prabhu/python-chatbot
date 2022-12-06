@@ -1,0 +1,124 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #FC5C7D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+h1 {
+  display: inline-block;
+  font-size: 3em;
+  margin: 0;
+  padding: 14px;
+  }
+
+h3 {
+  font-size: 20px;
+  margin-top: 3px;
+  text-align: center;
+  }
+
+#chatbox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 60px;
+      }
+
+#userInput {
+        width: 40%;
+        margin-top: 60px;
+        height:20px;
+        align:center;
+      }
+
+#textInput {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin-left:29%;
+        width: 40%;
+        border: none;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 17px;
+        padding: 15px;
+        border-radius:5px;
+      }
+
+.userText {
+        color: white;
+            font-family: 'Open Sans', sans-serif;
+        font-size: 17px;
+        text-align: right;
+        line-height: 30px;
+      }
+
+.userText span {
+        background-color: #808080;
+        padding: 10px;
+        border-radius: 50px;
+      }
+
+.botText {
+        color: white;
+            font-family: 'Open Sans', sans-serif;
+        font-size: 17px;
+        text-align: left;
+        line-height: 30px;
+      }
+
+.botText span {
+        background-color: #4169e1;
+        padding: 10px;
+        border-radius: 50px;
+      }
+
+#tidbit {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+      }
+
+.boxed {
+        margin-left: auto;
+        margin-right: auto;
+        width: 78%;
+        margin-top: 60px;
+        border: 1px solid green;
+      }
+
+.box {
+        border: 2px solid black;
+      }
+
+#buttonInput{
+        padding: 25px 5px;
+        background-color: green;
+        font-color: white;
+        }
+
+#buttonc{
+   background-color: green;
+   padding:10px;
+   color:white;
+   font-color: white;
+   text-align:center;
+   width:50px;
+   }
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%; /* The width is 100%, when the viewport is 768px or smaller */
+  }
+  .boxed {
+    width:100%;
+    border:none;
+  }
+  #textInput{
+    width:65%;
+  }
+  #chatbox{
+    width:100%;
+  }
+}

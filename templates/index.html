@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>ChatBot</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png" />
+  </head>
+  <body>
+    <center>
+      <h1>
+        Tushar's ChatBot
+      </h1>
+    </center>
+    <strong>Note: Press enter to send message.<br>The first response takes time to load, since it has to connect to the training set.</strong>
+<div class="box"></div>
+    <div class="boxed">
+      <div>
+        <div id="chatbox">
+          <img
+            src="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png"
+            alt="image"
+            style="width:40px;height:40px;"
+          />
+          <p class="botText">
+            <span>Hi! I'm your personal ChatBot, I'm developed by Tushar.</span>
+          </p>
+        </div>
+        <!--css-->
+        <div id="#userInput">
+          <input id="textInput" type="text" name="msg" placeholder="Enter message and hit enter key..." />
+        </div>
+        <div id="#buttonInput">
+<!--          &nbsp;<button id="#buttonc" type="submit" value="Send">Send</button>-->
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document
+            .getElementById("#userInput")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+            $("#chatbox").append(botHtml);
+            document
+              .getElementById("#userInput")
+              .scrollIntoView({ block: "start", behavior: "smooth" });
+          });
+        }
+        $("#textInput").keypress(function(e) {
+          if (e.which == 13) {
+            getBotResponse();
+          }
+        });
+        $("#buttonInput").click(function() {
+          getBotResponse();
+        })
+  </script>
+
+  <footer><center>Developed by Tushar<br>&copy-2020 All Rights Reserved</center></footer>
+  </body>
+</html>
